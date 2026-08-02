@@ -1,4 +1,4 @@
-import { CSSProperties } from "@/css.ts";
+import type { CSSProperties } from "@/css.ts";
 
 /**
  * All HTML elements

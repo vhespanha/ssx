@@ -18,6 +18,11 @@
     "build-types:css": "deno run -A _scripts/types_css.ts && deno fmt css.ts",
     "build-npm": "deno run -A _scripts/build_npm.ts"
   },
+  "lint": {
+    "rules": {
+      "tags": ["jsr", "jsx", "recommended"]
+    }
+  },
   "exclude": [
     "CHANGELOG.md",
     "tests/expected.html"
