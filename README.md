@@ -65,24 +65,26 @@ alias, point `jsxImportSource` directly at the package instead:
 }
 ```
 
-## Using NPM specifier
-
-SSX is also
-[published on NPM as `@vhespanha/ssx`](https://www.npmjs.com/package/@vhespanha/ssx):
-
-```json
-{
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "npm:@vhespanha/ssx"
-  }
-}
-```
-
 ## Use with Node and Bun
 
-If you want to use SSX with Node.js or Bun, see the `/examples/node` folder for
-an example setup using this package in a Node environment.
+SSX has no Deno-specific APIs, so it also runs on Node.js and Bun through
+[JSR's npm compatibility layer](https://jsr.io/docs/npm-compatibility) — there's
+no separate npm package to install.
+
+Add `@jsr:registry=https://npm.jsr.io` to your `.npmrc`, then install and import
+it like any npm package:
+
+```sh
+npm install @jsr/vhespanha__ssx
+```
+
+```js
+import { jsx, render } from "@jsr/vhespanha__ssx";
+```
+
+Since there's no JSX transform configured outside Deno, call `jsx()` directly,
+or wire up your own JSX transform (e.g. via `esbuild` or `tsc`) pointed at
+`@jsr/vhespanha__ssx/jsx-runtime`.
 
 ## Example:
 
