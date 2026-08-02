@@ -1,5 +1,5 @@
 /**
- * SSX — a minimal JSX library for server side rendering to plain HTML.
+ * SSX - a minimal JSX library for server side rendering to plain HTML.
  *
  * ```json
  * {

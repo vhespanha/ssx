@@ -237,6 +237,9 @@ export interface CSSProperties {
    */
   "animation-timing-function"?: string;
 
+  /**
+   * The `animation-trigger` CSS property.
+   */
   "animation-trigger"?: string;
 
   /**
@@ -375,6 +378,7 @@ export interface CSSProperties {
   "baseline-shift"?: string;
 
   /**
+   * The `baseline-source` CSS property.
    * Syntax: auto | first | last
    * Baseline: False (Not supported in all major browser)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-source
@@ -933,6 +937,7 @@ export interface CSSProperties {
   caret?: string;
 
   /**
+   * The `caret-animation` CSS property.
    * Syntax: auto | manual
    * Baseline: False (Not supported in all major browser)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/caret-animation
@@ -1031,6 +1036,9 @@ export interface CSSProperties {
    */
   "column-gap"?: "normal" | string | 0;
 
+  /**
+   * The `column-height` CSS property.
+   */
   "column-height"?: string;
 
   /**
@@ -1074,6 +1082,7 @@ export interface CSSProperties {
   "column-width"?: "auto" | string | 0;
 
   /**
+   * The `column-wrap` CSS property.
    * Syntax: auto | nowrap | wrap
    * Baseline: False (Not supported in all major browser)
    */
@@ -1174,86 +1183,103 @@ export interface CSSProperties {
   "content-visibility"?: "visible" | "auto" | "hidden";
 
   /**
+   * The `corner-block-end-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-end-shape
    */
   "corner-block-end-shape"?: string;
 
   /**
+   * The `corner-block-start-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-start-shape
    */
   "corner-block-start-shape"?: string;
 
   /**
+   * The `corner-bottom-left-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-left-shape
    */
   "corner-bottom-left-shape"?: string;
 
   /**
+   * The `corner-bottom-right-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-right-shape
    */
   "corner-bottom-right-shape"?: string;
 
   /**
+   * The `corner-bottom-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-shape
    */
   "corner-bottom-shape"?: string;
 
   /**
+   * The `corner-end-end-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-end-shape
    */
   "corner-end-end-shape"?: string;
 
   /**
+   * The `corner-end-start-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-start-shape
    */
   "corner-end-start-shape"?: string;
 
   /**
+   * The `corner-inline-end-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-end-shape
    */
   "corner-inline-end-shape"?: string;
 
   /**
+   * The `corner-inline-start-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-start-shape
    */
   "corner-inline-start-shape"?: string;
 
   /**
+   * The `corner-left-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-left-shape
    */
   "corner-left-shape"?: string;
 
   /**
+   * The `corner-right-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-right-shape
    */
   "corner-right-shape"?: string;
 
   /**
+   * The `corner-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-shape
    */
   "corner-shape"?: string;
 
   /**
+   * The `corner-start-end-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-end-shape
    */
   "corner-start-end-shape"?: string;
 
   /**
+   * The `corner-start-start-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-start-shape
    */
   "corner-start-start-shape"?: string;
 
   /**
+   * The `corner-top-left-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-left-shape
    */
   "corner-top-left-shape"?: string;
 
   /**
+   * The `corner-top-right-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-right-shape
    */
   "corner-top-right-shape"?: string;
 
   /**
+   * The `corner-top-shape` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-shape
    */
   "corner-top-shape"?: string;
@@ -1434,6 +1460,7 @@ export interface CSSProperties {
     | "text-top";
 
   /**
+   * The `dynamic-range-limit` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/dynamic-range-limit
    */
   "dynamic-range-limit"?: string;
@@ -1833,6 +1860,9 @@ export interface CSSProperties {
    */
   "font-variant-position"?: "normal" | "sub" | "super";
 
+  /**
+   * The `font-width` CSS property.
+   */
   "font-width"?: string;
 
   /**
@@ -2162,6 +2192,7 @@ export interface CSSProperties {
   "inset-inline-start"?: string;
 
   /**
+   * The `interactivity` CSS property.
    * Syntax: auto | inert
    * Baseline: False (Not supported in all major browser)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interactivity
@@ -2169,16 +2200,19 @@ export interface CSSProperties {
   interactivity?: "auto" | "inert";
 
   /**
+   * The `interest-delay` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay
    */
   "interest-delay"?: string;
 
   /**
+   * The `interest-delay-end` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-end
    */
   "interest-delay-end"?: string;
 
   /**
+   * The `interest-delay-start` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-start
    */
   "interest-delay-start"?: string;
@@ -3291,6 +3325,7 @@ export interface CSSProperties {
   r?: string;
 
   /**
+   * The `reading-flow` CSS property.
    * Syntax: normal | source-order | flex-visual | flex-flow | grid-rows | grid-columns | grid-order
    * Baseline: False (Not supported in all major browser)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-flow
@@ -3305,6 +3340,7 @@ export interface CSSProperties {
     | "grid-order";
 
   /**
+   * The `reading-order` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-order
    */
   "reading-order"?: string;
@@ -3409,6 +3445,7 @@ export interface CSSProperties {
   "scroll-behavior"?: "auto" | "smooth";
 
   /**
+   * The `scroll-initial-target` CSS property.
    * Syntax: none | nearest
    * Baseline: False (Not supported in all major browser)
    */
@@ -3481,6 +3518,7 @@ export interface CSSProperties {
   "scroll-margin-top"?: string;
 
   /**
+   * The `scroll-marker-group` CSS property.
    * Syntax: none | before | after
    * Baseline: False (Not supported in all major browser)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-marker-group
@@ -3615,6 +3653,7 @@ export interface CSSProperties {
   "scroll-snap-type-y"?: "none" | "mandatory" | "proximity";
 
   /**
+   * The `scroll-target-group` CSS property.
    * Syntax: none | auto
    * Baseline: False (Not supported in all major browser)
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-target-group
@@ -3751,6 +3790,9 @@ export interface CSSProperties {
    */
   stroke?: "url()" | "none" | string;
 
+  /**
+   * The `stroke-color` CSS property.
+   */
   "stroke-color"?: string;
 
   /**
@@ -3840,6 +3882,7 @@ export interface CSSProperties {
   "text-anchor"?: "end" | "middle" | "start";
 
   /**
+   * The `text-autospace` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-autospace
    */
   "text-autospace"?: string;
@@ -3897,6 +3940,7 @@ export interface CSSProperties {
   "text-decoration-color"?: string;
 
   /**
+   * The `text-decoration-inset` CSS property.
    * @see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-inset
    */
   "text-decoration-inset"?: string;
@@ -4089,22 +4133,49 @@ export interface CSSProperties {
    */
   "timeline-scope"?: string;
 
+  /**
+   * The `timeline-trigger` CSS property.
+   */
   "timeline-trigger"?: string;
 
+  /**
+   * The `timeline-trigger-exit-range` CSS property.
+   */
   "timeline-trigger-exit-range"?: string;
 
+  /**
+   * The `timeline-trigger-exit-range-end` CSS property.
+   */
   "timeline-trigger-exit-range-end"?: string;
 
+  /**
+   * The `timeline-trigger-exit-range-start` CSS property.
+   */
   "timeline-trigger-exit-range-start"?: string;
 
+  /**
+   * The `timeline-trigger-name` CSS property.
+   */
   "timeline-trigger-name"?: string;
 
+  /**
+   * The `timeline-trigger-range` CSS property.
+   */
   "timeline-trigger-range"?: string;
 
+  /**
+   * The `timeline-trigger-range-end` CSS property.
+   */
   "timeline-trigger-range-end"?: string;
 
+  /**
+   * The `timeline-trigger-range-start` CSS property.
+   */
   "timeline-trigger-range-start"?: string;
 
+  /**
+   * The `timeline-trigger-source` CSS property.
+   */
   "timeline-trigger-source"?: string;
 
   /**
@@ -4236,6 +4307,9 @@ export interface CSSProperties {
    */
   translate?: string;
 
+  /**
+   * The `trigger-scope` CSS property.
+   */
   "trigger-scope"?: string;
 
   /**
