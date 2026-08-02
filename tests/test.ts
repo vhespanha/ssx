@@ -1,4 +1,4 @@
-import { assertEquals } from "jsr:@std/assert@1.0.16";
+import { assertEquals } from "@std/assert";
 import { renderComponent } from "../jsx-runtime.ts";
 import example from "./example.tsx";
 import example2 from "./example2.jsx";
