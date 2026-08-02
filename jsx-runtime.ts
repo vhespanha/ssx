@@ -1,13 +1,16 @@
 import type { CSSProperties } from "@/css.ts";
 import type { HTMLElements } from "@/html.ts";
 
-interface RawHtml {
+/** Raw HTML content, inserted without escaping */
+export interface RawHtml {
   __html?: string;
 }
 
-type Props = Record<string, unknown>;
+/** The props passed to a component or element */
+export type Props = Record<string, unknown>;
 
-type Content =
+/** Anything that can be rendered to a string */
+export type Content =
   | string
   | number
   | boolean
@@ -17,7 +20,8 @@ type Content =
 
 const ssxElement = Symbol.for("ssx.element");
 
-interface Component {
+/** An element created by the jsx factory */
+export interface Component {
   // deno-lint-ignore no-explicit-any
   type: string | ((props: Props) => any);
   props: Props;
@@ -71,8 +75,12 @@ export function jsx(
 /** Alias jsxs to jsx for compatibility with automatic runtime */
 export { jsx as jsxs };
 
+/** Alias jsxDEV to jsx for the "react-jsxdev" transform. The extra arguments
+ * it receives (key, isStaticChildren, source, self) are ignored. */
+export { jsx as jsxDEV };
+
 /** Fragment component to group multiple elements */
-export function Fragment(props: { children: unknown }) {
+export function Fragment(props: { children: unknown }): unknown {
   return props.children;
 }
 
@@ -229,24 +237,27 @@ export function jsxAttr(name: string, value: unknown): string {
   return "";
 }
 
-/** Make JSX global */
-declare global {
-  export namespace JSX {
-    export type { Component };
-    export type Children =
-      | HTMLElements
-      | RawHtml
-      | Content
-      | Component
-      | string
-      | number
-      | boolean
-      | null
-      | Children[];
-    export interface IntrinsicElements extends HTMLElements {}
-    export interface ElementChildrenAttribute {
-      children: Children;
-    }
+/** Alias so `JSX.Component` can point at the interface it shadows */
+type _Component = Component;
+
+/** JSX types. TypeScript resolves them from this module through the
+ * `jsxImportSource` compiler option, so there is no global to import. */
+// deno-lint-ignore no-namespace
+export namespace JSX {
+  export type Component = _Component;
+  export type Children =
+    | HTMLElements
+    | RawHtml
+    | Content
+    | Component
+    | string
+    | number
+    | boolean
+    | null
+    | Children[];
+  export interface IntrinsicElements extends HTMLElements {}
+  export interface ElementChildrenAttribute {
+    children: Children;
   }
 }
 

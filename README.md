@@ -28,22 +28,36 @@ plain HTML code.
 
 ## Configuration
 
-In your `deno.json` file:
+```sh
+deno add jsr:@vhespanha/ssx
+```
+
+Then point `jsxImportSource` at it in your `deno.json` file:
+
+```json
+{
+  "imports": {
+    "ssx": "jsr:@vhespanha/ssx@^0.2"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "ssx"
+  }
+}
+```
+
+That's the whole setup: `ssx/jsx-runtime` resolves through the package's exports
+map, so there is nothing else to wire up. If you'd rather not add an import
+alias, point `jsxImportSource` directly at the package instead:
 
 ```json
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "ssx"
-  },
-  "imports": {
-    "ssx/jsx-runtime": "https://deno.land/x/ssx@v0.1.14/jsx-runtime.ts"
+    "jsxImportSource": "jsr:@vhespanha/ssx"
   }
 }
 ```
-
-Alternatively, you can use
-[JsDelivr as CDN](https://cdn.jsdelivr.net/gh/oscarotero/ssx/).
 
 ## Using NPM specifier
 
@@ -66,8 +80,9 @@ example setup using this package in a Node environment.
 
 ## Example:
 
-```jsx
-import { renderComponent } from "ssx/jsx-runtime";
+```tsx
+import { render } from "ssx";
+import type { JSX } from "ssx";
 
 // Main component
 function Main() {
@@ -100,8 +115,11 @@ async function Header({ children }: { children: JSX.Children }) {
 }
 
 // String with the HTML code
-console.log(await renderComponent(<Main />);
+console.log(await render(<Main />));
 ```
+
+`render` is an alias of `renderComponent`; both are exported, and any element
+also renders itself with `await (<Main />).toString()`.
 
 ### Adding Doctype:
 

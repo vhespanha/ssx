@@ -1,3 +1,5 @@
+import type { JSX } from "ssx";
+
 export default function Main() {
   return (
     <>

@@ -2,3 +2,4 @@
 _npm
 node_modules
 package-lock.json
+deno.lock
