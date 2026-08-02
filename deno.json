@@ -2,7 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
   "name": "@vhespanha/ssx",
   "version": "0.2.0",
-  "workspace": ["./npm"],
+  "workspace": [
+    "./npm",
+    "./benchmark",
+    "./tests/react-jsx",
+    "./tests/precompile"
+  ],
   "exports": {
     ".": "./mod.ts",
     "./jsx-runtime": "./jsx-runtime.ts",
@@ -23,13 +28,9 @@
     "build-types:html": "deno run -A _scripts/types_html.ts && deno fmt html.ts",
     "build-types:css": "deno run -A _scripts/types_css.ts && deno fmt css.ts"
   },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "ssx"
-  },
   "lint": {
     "rules": {
-      "tags": ["jsr", "jsx", "recommended"]
+      "tags": ["jsr", "jsx", "recommended", "workspace"]
     }
   },
   "exclude": [

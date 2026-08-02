@@ -1,11 +1,15 @@
-import example from "@/tests/example.tsx";
-import example2 from "@/tests/example2.jsx";
-import { withoutTitle, withTitle } from "@/tests/example3.tsx";
+import example from "@/tests/react-jsx/example.tsx";
+import example2 from "@/tests/react-jsx/example2.jsx";
+import { withoutTitle, withTitle } from "@/tests/react-jsx/example3.tsx";
 import { assertEquals } from "@std/assert";
 import { render } from "ssx";
 
-const expected = Deno.readTextFileSync("tests/expected.html");
-const expected2 = Deno.readTextFileSync("tests/expected2.html");
+const expected = Deno.readTextFileSync(
+  new URL("../expected.html", import.meta.url),
+);
+const expected2 = Deno.readTextFileSync(
+  new URL("../expected2.html", import.meta.url),
+);
 
 Deno.test("Render TSX", async () => {
   const code = await example();
