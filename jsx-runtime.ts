@@ -22,8 +22,7 @@ const ssxElement = Symbol.for("ssx.element");
 
 /** An element created by the jsx factory */
 export interface Component {
-  // deno-lint-ignore no-explicit-any
-  type: string | ((props: Props) => any);
+  type: string | ((props: Props) => unknown);
   props: Props;
 }
 
@@ -138,10 +137,9 @@ export async function jsxEscape(content: Content): Promise<string> {
   return content as Promise<string>;
 }
 
-// deno-lint-ignore no-explicit-any
-function isComponent(value: any): value is Component {
+function isComponent(value: unknown): value is Component {
   return value !== null && typeof value === "object" &&
-    value[ssxElement] === true;
+    (value as Record<symbol, unknown>)[ssxElement] === true;
 }
 
 export async function renderComponent(
