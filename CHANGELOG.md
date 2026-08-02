@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] - 2026-08-02
+### Added
+- Module-level doc comment on `jsx-runtime.ts` (the last entrypoint missing one).
+- JSDoc on the exported symbols that were missing it: `RawHtml.__html`, `Component.type`/`props`, `renderComponent`, and the `JSX` namespace's `Component`, `Children`, `IntrinsicElements` and `ElementChildrenAttribute`.
+- Fallback description in the `CSSProperties` type generator (`_scripts/types_css.ts`) so every generated property has a doc comment, even when the source MDN data has none.
+- `.github/workflows/compat.yml`: smoke-tests the published package against Node.js and Bun (via JSR's npm compatibility layer) after each publish.
+
+### Changed
+- README's Node/Bun instructions now point at JSR's npm compatibility layer (`@jsr/vhespanha__ssx` via `npm.jsr.io`) instead of the removed `/examples/node` folder and npm publish workflow.
+
 ## [0.2.0] - 2026-08-02
 ### Added
 - Published on [JSR](https://jsr.io/@vhespanha/ssx).
