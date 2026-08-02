@@ -1,5 +1,11 @@
 # SSX
 
+> This is a fork of [oscarotero/ssx](https://github.com/oscarotero/ssx),
+> published as `@vhespanha/ssx` on [JSR](https://jsr.io/@vhespanha/ssx). It
+> carries a few changes needed to make the package JSR-publishable (`mod.ts`
+> entry point, exports map, non-global `JSX` types, `render`/`jsxDEV` exports) -
+> see the [changelog](./CHANGELOG.md) for details.
+
 JSX is terrible for frontend. But it's an acceptable way to create HTML code in
 server side, specially if it's supported by default by TypeScript and Deno.
 

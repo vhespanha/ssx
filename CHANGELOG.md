@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] - 2026-08-02
+### Added
+- Published on [JSR](https://jsr.io/@vhespanha/ssx).
+- `render` export, an alias of `renderComponent`.
+- `jsxDEV` export for the `react-jsxdev` transform.
+- `Component`, `Content`, `Props` and `RawHtml` types exported from `ssx`.
+- npm publish workflow (`.github/workflows/publish-npm.yml`), building the package with `dnt` from the new `npm/` workspace.
+- Test coverage for the `precompile` transform, asserting it renders the same HTML as `react-jsx` from the same source.
+
+### Changed
+- **Breaking:** `JSX` is no longer declared as a global namespace; it's exported from `ssx`/`ssx/jsx-runtime`. Import it explicitly where needed.
+- Package renamed to `@vhespanha/ssx` on both JSR and NPM to differentiate fork.
+- Node/Bun examples moved from `/node` to `/examples/node`.
+- Tests and benchmarks split into `tests/react-jsx/`, `tests/precompile/` and `benchmark/` workspace members, each setting its own `jsx` transform. The root `compilerOptions` are gone as a result.
+
 ## [0.1.15] - 2026-05-17
 ### Fixed
 - Updated CSS types.
@@ -110,6 +125,7 @@ First version
 
 [#2]: https://github.com/oscarotero/ssx/issues/2
 
+[0.2.0]: https://github.com/vhespanha/ssx/compare/v0.1.15...v0.2.0
 [0.1.15]: https://github.com/oscarotero/ssx/compare/v0.1.14...v0.1.15
 [0.1.14]: https://github.com/oscarotero/ssx/compare/v0.1.13...v0.1.14
 [0.1.13]: https://github.com/oscarotero/ssx/compare/v0.1.12...v0.1.13
