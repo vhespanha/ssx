@@ -1,0 +1,37 @@
+name: Runtime compatibility
+
+on:
+  workflow_run:
+    workflows: ["Publish JSR package"]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  node:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install package from JSR's npm registry
+        run: |
+          echo "@jsr:registry=https://npm.jsr.io" > .npmrc
+          npm init -y >/dev/null
+          npm install @jsr/vhespanha__ssx@latest
+      - name: Run smoke test
+        run: node _scripts/smoke_runtime.mjs
+
+  bun:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: oven-sh/setup-bun@v2
+      - name: Install package from JSR's npm registry
+        run: |
+          echo "@jsr:registry=https://npm.jsr.io" > .npmrc
+          bun add @jsr/vhespanha__ssx@latest
+      - name: Run smoke test
+        run: bun run _scripts/smoke_runtime.mjs
