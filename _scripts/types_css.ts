@@ -30,7 +30,7 @@ function createProperty(attr: any): Props | undefined {
   }
 
   let value = "string";
-  let description = attr.description;
+  let description = attr.description || `The \`${attr.name}\` CSS property.`;
 
   if (Array.isArray(attr.values) && attr.values.length > 0) {
     value = attr.values

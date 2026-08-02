@@ -1,8 +1,18 @@
+/**
+ * The low-level JSX runtime behind SSX, wired up via the `jsxImportSource`
+ * compiler option. Most consumers should import from `ssx` (the package
+ * root) instead; this module is exported separately only so `./jsx-runtime`
+ * and `./jsx-dev-runtime` can resolve through it.
+ *
+ * @module
+ */
+
 import type { CSSProperties } from "@/css.ts";
 import type { HTMLElements } from "@/html.ts";
 
 /** Raw HTML content, inserted without escaping */
 export interface RawHtml {
+  /** The raw, pre-escaped HTML string */
   __html?: string;
 }
 
@@ -22,7 +32,9 @@ const ssxElement = Symbol.for("ssx.element");
 
 /** An element created by the jsx factory */
 export interface Component {
+  /** The HTML tag name, or the component function that renders this element */
   type: string | ((props: Props) => unknown);
+  /** The props passed to this element */
   props: Props;
 }
 
@@ -142,6 +154,7 @@ function isComponent(value: unknown): value is Component {
     (value as Record<symbol, unknown>)[ssxElement] === true;
 }
 
+/** Renders a component (or array of components) to an HTML string */
 export async function renderComponent(
   component: unknown | unknown[],
 ): Promise<string> {
@@ -242,7 +255,9 @@ type _Component = Component;
  * `jsxImportSource` compiler option, so there is no global to import. */
 // deno-lint-ignore no-namespace
 export namespace JSX {
+  /** An element created by the jsx factory */
   export type Component = _Component;
+  /** Anything that can be passed as `children` to a JSX element */
   export type Children =
     | HTMLElements
     | RawHtml
@@ -253,8 +268,11 @@ export namespace JSX {
     | boolean
     | null
     | Children[];
+  /** The set of intrinsic (HTML tag) elements available to JSX */
   export interface IntrinsicElements extends HTMLElements {}
+  /** Declares the prop TypeScript uses to type an element's `children` */
   export interface ElementChildrenAttribute {
+    /** The element's children */
     children: Children;
   }
 }
