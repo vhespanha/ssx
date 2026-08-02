@@ -3,7 +3,6 @@
   "name": "@vhespanha/ssx",
   "version": "0.2.0",
   "workspace": [
-    "./npm",
     "./benchmark",
     "./tests/react-jsx",
     "./tests/precompile"
@@ -36,7 +35,6 @@
   "exclude": [
     "CHANGELOG.md",
     "tests/expected.html",
-    "npm/dist",
     "examples"
   ],
   "publish": {

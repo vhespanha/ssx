@@ -10,14 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - `render` export, an alias of `renderComponent`.
 - `jsxDEV` export for the `react-jsxdev` transform.
 - `Component`, `Content`, `Props` and `RawHtml` types exported from `ssx`.
-- npm publish workflow (`.github/workflows/publish-npm.yml`), building the package with `dnt` from the new `npm/` workspace.
 - Test coverage for the `precompile` transform, asserting it renders the same HTML as `react-jsx` from the same source.
 
 ### Changed
 - **Breaking:** `JSX` is no longer declared as a global namespace; it's exported from `ssx`/`ssx/jsx-runtime`. Import it explicitly where needed.
-- Package renamed to `@vhespanha/ssx` on both JSR and NPM to differentiate fork.
-- Node/Bun examples moved from `/node` to `/examples/node`.
+- Package renamed to `@vhespanha/ssx` on both JSR to differentiate fork.
 - Tests and benchmarks split into `tests/react-jsx/`, `tests/precompile/` and `benchmark/` workspace members, each setting its own `jsx` transform. The root `compilerOptions` are gone as a result.
+- Removed npm publish workflow
+- Removed node examples
 
 ## [0.1.15] - 2026-05-17
 ### Fixed
