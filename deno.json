@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "ssx"
@@ -18,10 +19,5 @@
   "exclude": [
     "CHANGELOG.md",
     "tests/expected.html"
-  ],
-  "lint": {
-    "rules": {
-      "exclude": ["no-import-prefix"]
-    }
-  }
+  ]
 }
