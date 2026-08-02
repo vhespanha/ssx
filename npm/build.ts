@@ -1,4 +1,4 @@
-import { build, emptyDir } from "jsr:@deno/dnt@^0.43.1";
+import { build, emptyDir } from "@deno/dnt";
 
 const version = Deno.args[0];
 
