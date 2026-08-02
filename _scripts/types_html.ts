@@ -165,7 +165,7 @@ function getDescription(description: any): string | undefined {
 }
 
 const code = [
-  `import { CSSProperties } from "./css.ts";`,
+  `import type { CSSProperties } from "@/css.ts";`,
   renderInterface(intrinsicElements),
   renderInterface(globalAttributes),
   ...tags.map(renderInterface),
