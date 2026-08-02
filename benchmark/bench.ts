@@ -1,7 +1,7 @@
-import ssx from "./ssx.jsx";
-import preact from "./preact.jsx";
-import hono from "./hono.jsx";
-import react from "./react.jsx";
+import hono from "@/benchmark/hono.jsx";
+import preact from "@/benchmark/preact.jsx";
+import react from "@/benchmark/react.jsx";
+import ssx from "@/benchmark/ssx.jsx";
 
 Deno.bench({
   name: "ssx",

@@ -1,8 +1,9 @@
+import example from "@/tests/example.tsx";
+import example2 from "@/tests/example2.jsx";
+import { withoutTitle, withTitle } from "@/tests/example3.tsx";
 import { assertEquals } from "@std/assert";
-import { renderComponent } from "../jsx-runtime.ts";
-import example from "./example.tsx";
-import example2 from "./example2.jsx";
-import { withoutTitle, withTitle } from "./example3.tsx";
+import { renderComponent } from "ssx/jsx-runtime";
+
 const expected = Deno.readTextFileSync("tests/expected.html");
 const expected2 = Deno.readTextFileSync("tests/expected2.html");
 

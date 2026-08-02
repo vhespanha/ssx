@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 
-import { Inter, Props, renderInterface } from "./types.ts";
+import { Inter, Props, renderInterface } from "@/_scripts/types.ts";
 
 const res = await fetch(
   "https://cdn.jsdelivr.net/npm/@vscode/web-custom-data@latest/data/browsers.css-data.json",
