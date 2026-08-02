@@ -1,4 +1,4 @@
-import { renderComponent } from "@lumeland/ssx/jsx-runtime";
+import { renderComponent } from "@vhespanha/ssx/jsx-runtime";
 
 function ComponentA() {
   return <div>Hello</div>;

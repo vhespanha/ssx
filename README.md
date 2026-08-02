@@ -62,21 +62,21 @@ alias, point `jsxImportSource` directly at the package instead:
 ## Using NPM specifier
 
 SSX is also
-[published on NPM as `@lumeland/ssx`](https://www.npmjs.com/package/@lumeland/ssx):
+[published on NPM as `@vhespanha/ssx`](https://www.npmjs.com/package/@vhespanha/ssx):
 
 ```json
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "npm:@lumeland/ssx"
+    "jsxImportSource": "npm:@vhespanha/ssx"
   }
 }
 ```
 
 ## Use with Node and Bun
 
-If you want to use SSX with Node.js or Bun, see the `/node` folder for an
-example setup using this package in a Node environment.
+If you want to use SSX with Node.js or Bun, see the `/examples/node` folder for
+an example setup using this package in a Node environment.
 
 ## Example:
 

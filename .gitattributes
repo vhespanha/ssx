@@ -1,5 +1,6 @@
 /_scripts        export-ignore
-/node            export-ignore
+/examples        export-ignore
+/npm             export-ignore
 /benchmark       export-ignore
 /tests           export-ignore
 /deno.json       export-ignore

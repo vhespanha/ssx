@@ -2,6 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
   "name": "@vhespanha/ssx",
   "version": "0.2.0",
+  "workspace": ["./npm"],
   "exports": {
     ".": "./mod.ts",
     "./jsx-runtime": "./jsx-runtime.ts",
@@ -20,8 +21,7 @@
     "bench": "deno bench --allow-env benchmark/bench.ts",
     "build-types": "deno task build-types:html & deno task build-types:css",
     "build-types:html": "deno run -A _scripts/types_html.ts && deno fmt html.ts",
-    "build-types:css": "deno run -A _scripts/types_css.ts && deno fmt css.ts",
-    "build-npm": "deno run -A _scripts/build_npm.ts"
+    "build-types:css": "deno run -A _scripts/types_css.ts && deno fmt css.ts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -34,7 +34,9 @@
   },
   "exclude": [
     "CHANGELOG.md",
-    "tests/expected.html"
+    "tests/expected.html",
+    "npm/dist",
+    "examples"
   ],
   "publish": {
     "include": [
